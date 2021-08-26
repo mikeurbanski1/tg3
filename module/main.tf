@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "regular_bucket" {
+resource "aws_s3_bucket" "mod_bucket" {
   # bucket is public
   # bucket is not encrypted
   # bucket does not have access logs
@@ -10,10 +10,6 @@ resource "aws_s3_bucket" "regular_bucket" {
     Name        = "${local.resource_prefix.value}-data"
     Environment = local.resource_prefix.value
   }
-}
-
-module "mod" {
-  source = "./module"
 }
 
 
