@@ -14,8 +14,13 @@ resource "aws_s3_bucket" "regular_bucket" {
 
 module "mod" {
   source = "./module"
+  x = "abc"
 }
 
+module "mod" {
+  source = "./module"
+  x = "xyz"
+}
 
 module "dynamodb_table" {
   source   = "terraform-aws-modules/dynamodb-table/aws"
@@ -33,6 +38,27 @@ module "dynamodb_table" {
   tags = {
     Terraform   = "true"
     Environment = "staging"
+  }
+
+  server_side_encryption_enabled = false
+}
+
+module "dynamodb_table2" {
+  source   = "terraform-aws-modules/dynamodb-table/aws"
+
+  name     = "my-table2"
+  hash_key = "id2"
+
+  attributes = [
+    {
+      name = "id2"
+      type = "N"
+    }
+  ]
+
+  tags = {
+    Terraform   = "true2"
+    Environment = "staging2"
   }
 
   server_side_encryption_enabled = false
