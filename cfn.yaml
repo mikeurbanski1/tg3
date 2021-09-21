@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS CloudFormation Template to deploy insecure infrastructure
+Parameters:
+  CompanyName:
+    Description: Company Name
+    Type: String
+    Default: acme
+  Environment: 
+    Description: Environment
+    Type: String
+    Default: dev
+  DBName:
+    Description: Name of the Database
+    Type: String
+    Default: db1
+  Password: 
+    Description: Database Password 
+    Type: String
+    NoEcho: True
+    MinLength: 1
+    MaxLength: 41
+    AllowedPattern: ^[a-zA-Z0-9]*$
+  LatestAmiId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+
+Resources:
+  ####################
+  ###  EC2 in VPC  ###
+  ####################
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: 
+        Fn::Select:
+        - 0
+        - Fn::GetAZs: ""
+      InstanceType: t2.nano
+      SecurityGroupIds: 
+        - !Ref WebNodeSG
+      ImageId: !Ref LatestAmiId
+      SubnetId: !Ref WebSubnet
+      Tags: 
+        - Key: Name
+          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ec2" 
+    
+  WebHostStorage:
+    # Unencrypted Volume 
+    Type: AWS::EC2::Volume
+    Properties: 
+      AvailabilityZone: !Select 
+        - 0
+        - Fn::GetAZs: ""
+      #Encrypted: False
+      Size: 1
+      Tags: 
+        - Key: Name
+          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ebs"
+  SomethingElse:
+    Type: AWS::EC2::Something
+    Properties: 
+      AvailabilityZone: !Select 
+        - 0
+        - Fn::GetAZs: ""
+      #Encrypted: False
+      Size: 1
+      Tags: 
+        - Key: Name
+          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ebs"
