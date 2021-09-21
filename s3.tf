@@ -12,6 +12,10 @@ resource "aws_s3_bucket" "regular_bucket" {
   }
 }
 
+resource "aws_something_else" "x" {
+  hello = "hi"
+}
+
 module "mod" {
   source = "./module"
   x = "abc"
