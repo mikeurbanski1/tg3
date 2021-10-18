@@ -25,6 +25,30 @@ module "mod2" {
   source = "./module"
   x = "xyz"
 }
+  
+module "iam_policy" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
+  version = "~> 4.3"
+
+  name        = "example"
+  path        = "/"
+  description = "My example policy"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
 
 module "dynamodb_table" {
   source   = "terraform-aws-modules/dynamodb-table/aws"
