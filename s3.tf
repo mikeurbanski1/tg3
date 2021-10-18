@@ -21,7 +21,7 @@ module "mod" {
   x = "abc"
 }
 
-module "mod" {
+module "mod2" {
   source = "./module"
   x = "xyz"
 }
