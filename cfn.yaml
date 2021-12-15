@@ -67,3 +67,13 @@ Resources:
       Tags: 
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ebs"
+
+  BadS3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
+      # let's what happens
+      VersioningConfiguration:
+        Status: Disabled
+      # more to see here
