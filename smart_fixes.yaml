@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS CloudFormation Template to deploy insecure infrastructure
+
+Resources:
+  LogGroup1:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 90
+  LogGroup2:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 90
+  LogGroup3:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 90
+  LogGroup4:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 90
+  LogGroup5:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 45
+  LogGroup6:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 45
+  LogGroup7:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      RetentionInDays: 45
+  LogGroup8:
+    Type: AWS::Logs::LogGroup
+    Properties: 
+      LogGroupName: abc
+    
