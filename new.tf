@@ -11,6 +11,7 @@ resource "aws_s3_bucket" "data" {
   tags = {
     Name        = "${local.resource_prefix.value}-data"
   }
+
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
