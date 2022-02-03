@@ -1,4 +1,5 @@
 resource "aws_cloudwatch_log_group" "example1" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -8,6 +9,7 @@ resource "aws_cloudwatch_log_group" "example1" {
 }
 
 resource "aws_cloudwatch_log_group" "example2" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -17,6 +19,7 @@ resource "aws_cloudwatch_log_group" "example2" {
 }
 
 resource "aws_cloudwatch_log_group" "example3" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -26,6 +29,7 @@ resource "aws_cloudwatch_log_group" "example3" {
 }
 
 resource "aws_cloudwatch_log_group" "example4" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -35,6 +39,7 @@ resource "aws_cloudwatch_log_group" "example4" {
 }
 
 resource "aws_cloudwatch_log_group" "example5" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -44,6 +49,7 @@ resource "aws_cloudwatch_log_group" "example5" {
 }
 
 resource "aws_cloudwatch_log_group" "example6" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -53,6 +59,7 @@ resource "aws_cloudwatch_log_group" "example6" {
 }
 
 resource "aws_cloudwatch_log_group" "example7" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
@@ -62,6 +69,7 @@ resource "aws_cloudwatch_log_group" "example7" {
 }
 
 resource "aws_cloudwatch_log_group" "example8" {
+  # checkov:skip=BC_AWS_GENERAL_85:nah
   name = "example1"
   tags = {
     Environment = "production"
