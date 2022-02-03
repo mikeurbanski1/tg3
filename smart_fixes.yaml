@@ -3,30 +3,37 @@ Description: AWS CloudFormation Template to deploy insecure infrastructure
 
 Resources:
   LogGroup1:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 90
   LogGroup2:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 90
   LogGroup3:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 90
   LogGroup4:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 90
   LogGroup5:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 45
   LogGroup6:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 45
   LogGroup7:
+    # checkov:skip=BC_AWS_GENERAL_85:nah
     Type: AWS::Logs::LogGroup
     Properties: 
       RetentionInDays: 45
