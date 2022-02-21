@@ -12,6 +12,11 @@ resource "aws_s3_bucket" "regular_bucket" {
   }
 }
 
+resource "aws_s3_bucket" "b" {
+  bucket        = "xx1"
+
+}
+
 resource "aws_s3_bucket" "regular_bucket2" {
   # bucket is public
   # bucket is not encrypted
