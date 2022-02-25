@@ -17,8 +17,8 @@ resource "aws_s3_bucket" "will_it_blend" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "xx"
-  acl           = "public-read"
+  bucket        = "xx2"
+  acl           = "public-write"
   force_destroy = true
   tags = {
     Name        = "${local.resource_prefix.value}-data"
