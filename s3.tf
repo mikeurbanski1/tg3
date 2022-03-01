@@ -15,7 +15,6 @@ resource "aws_s3_bucket" "regular_bucket" {
 resource "aws_s3_bucket" "bad_bucket" {
   #bridgecrew:skip=BC_AWS_GENERAL_26:justification
   #bridgecrew:skip=CKV_AWS_145:justification
-
   bucket = "abc"
   server_side_encryption_configuration {
     rule {
