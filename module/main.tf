@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "mod_bucket" {
   # bucket does not have access logs
   # bucket does not have versioning
   bucket        = var.x
-  acl           = "public-read"
+  acl           = var.acl
   force_destroy = true
   tags = {
     Name        = "${local.resource_prefix.value}-data"
@@ -15,4 +15,8 @@ resource "aws_s3_bucket" "mod_bucket" {
 
 variable "x" {
 
+}
+
+variable "acl" {
+  
 }
