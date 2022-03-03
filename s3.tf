@@ -12,6 +12,16 @@ resource "aws_s3_bucket" "regular_bucket" {
   }
 }
 
+resource "aws_s3_bucket" "bad_bucket" {
+  bucket        = "xx"
+  acl           = "public-read"
+  force_destroy = true
+  tags = {
+    Name        = "${local.resource_prefix.value}-data"
+    Environment = local.resource_prefix.value
+  }
+}
+
 resource "aws_s3_bucket" "will_it_blend" {
   # bucket is public
   # bucket is not encrypted
