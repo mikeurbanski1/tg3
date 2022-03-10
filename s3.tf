@@ -47,6 +47,7 @@ resource "aws_something_else" "x" {
 module "mod" {
   source = "./module"
   x = "abc"
+  acl = "public-read"
 }
 
 module "mod2" {
