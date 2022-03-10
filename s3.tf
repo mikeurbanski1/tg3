@@ -49,11 +49,12 @@ module "mod" {
   x = "abc"
   acl = "public-read"
 }
-
-# module "mod2" {
-#   source = "./module"
-#   x = "xyz"
-# }
+  
+module "mod2" {
+  source = "./module"
+  x = "abc"
+  acl = "public-read"
+}
   
 # module "iam_policy" {
 #   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
