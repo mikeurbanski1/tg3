@@ -76,3 +76,12 @@ resource "aws_cloudwatch_log_group" "example8" {
     Application = "serviceA"
   }
 }
+
+
+resource "aws_cloudwatch_log_group" "example9" {
+  name = "example1"
+  tags = {
+    Environment = "production"
+    Application = "serviceA"
+  }
+}
