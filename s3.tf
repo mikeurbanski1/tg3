@@ -11,6 +11,15 @@ resource "aws_s3_bucket" "default" {
   }
 }
 
+resource "aws_s3_bucket_public_access_block" "default" {
+  count  = module.this.enabled && local.public_access_block_enabled ? 1 : 0
+  bucket = join("", aws_s3_bucket.default.*.id)
+  block_public_acls       = var.block_public_acls
+  block_public_policy     = var.block_public_policy
+  ignore_public_acls      = var.ignore_public_acls
+  restrict_public_buckets = var.restrict_public_buckets
+}
+
 # resource "aws_s3_bucket" "will_it_blend" {
 #   # bucket is public
 #   # bucket is not encrypted
