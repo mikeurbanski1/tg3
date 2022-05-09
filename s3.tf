@@ -9,6 +9,7 @@ resource "aws_s3_bucket" "default" {
       object_lock_enabled = "Enabled"
     }
   }
+  object_lock_enabled = local.object_lock_enabled
 }
 
 resource "aws_s3_bucket_public_access_block" "default" {
