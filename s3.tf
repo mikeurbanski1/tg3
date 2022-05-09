@@ -1,15 +1,16 @@
-resource "aws_s3_bucket" "regular_bucket" {
-  # bucket is public
-  # bucket is not encrypted
-  # bucket does not have access logs
-  # bucket does not have versioning
-  bucket        = "xx"
-  acl           = "public-read"
-  force_destroy = true
-  tags = {
-    Name        = "${local.resource_prefix.value}-data"
-    Environment = local.resource_prefix.value
+resource "aws_s3_bucket" "default" {
+  count         = local.enabled ? 1 : 0
+  bucket        = local.bucket_name
+  force_destroy = var.force_destroy
+
+  dynamic "object_lock_configuration" {
+    for_each = var.object_lock_configuration != null ? [1] : []
+
+    content {
+      object_lock_enabled = "Enabled"
+    }
   }
+  object_lock_enabled = local.object_lock_enabled
 }
 
 # resource "aws_s3_bucket" "will_it_blend" {
