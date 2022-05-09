@@ -5,7 +5,6 @@ resource "aws_s3_bucket" "default" {
 
   dynamic "object_lock_configuration" {
     for_each = var.object_lock_configuration != null ? [1] : []
-
     content {
       object_lock_enabled = "Enabled"
     }
