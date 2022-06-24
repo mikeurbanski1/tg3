@@ -75,4 +75,5 @@ resource "aws_cloudwatch_log_group" "example8" {
     Environment = "production"
     Application = "serviceA"
   }
+  
 }
