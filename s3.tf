@@ -14,6 +14,7 @@ resource "aws_s3_bucket" "default" {
       object_lock_enabled = "Enabled"
     }
   }
+  
 }
 
 resource "aws_s3_bucket_public_access_block" "default" {
