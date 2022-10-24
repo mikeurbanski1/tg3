@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS CloudFormation Template to deploy insecure infrastructure
+Resources:
+  DataBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    Properties:
+      BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
+      AccessControl: PublicRead
+      Tags:
+        - Key: Name
+          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
+  Attachment:
+    Type: AWS::EC2::VolumeAttachment
+    Properties: 
+      Device: abc
+      InstanceId: abc
+      VolumeId: abc
