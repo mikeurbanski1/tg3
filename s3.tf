@@ -16,6 +16,10 @@ resource "aws_s3_bucket" "default" {
   }
 }
 
+resource "aws_s3_bucket" "bbbb" {
+
+}
+
 
 resource "aws_s3_bucket_public_access_block" "default" {
   count  = module.this.enabled && local.public_access_block_enabled ? 1 : 0
