@@ -6,6 +6,8 @@ resource "aws_s3_bucket" "bucket2" {
 
 }
 
+
+
 resource "aws_security_group_rule" "sgrule" {
   
 }
