@@ -7,3 +7,10 @@ resource "aws_ebs_volume" "ebs" {
   size              = 40
   encrypted = var.enc
 }
+
+resource "aws_ebs_volume" "ebs22222" {
+  availability_zone = "us-west-2a"
+  size              = 40
+  encrypted = var.enc
+}
+
