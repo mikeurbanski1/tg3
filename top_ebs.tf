@@ -14,3 +14,6 @@ resource "aws_ebs_volume" "ebs22222" {
   encrypted = var.enc
 }
 
+
+
+
