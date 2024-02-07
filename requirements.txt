@@ -1,4 +1,1 @@
-click==6.6
-PyYAML==5.0
-Jinja2==2.11.3
-boto3==1.18.11
+requests==2.31.0
