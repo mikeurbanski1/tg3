@@ -1,1 +1,0 @@
-acl = "public-read"
